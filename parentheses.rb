@@ -2,6 +2,7 @@
 
 def check_parentheses(argument)
   data = argument.chars
+  return result(false) if argument.size > 100
   stack = 0
   data.each do |current_char|
     return result(false) if current_char == ')' && stack.zero?
@@ -11,6 +12,6 @@ def check_parentheses(argument)
   result(stack.zero?)
 end
 
-def result(object = false)
-  puts object ? 'Balanced' : 'Unbalanced'
+def result(object)
+  puts object
 end
